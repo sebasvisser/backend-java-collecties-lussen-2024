@@ -30,11 +30,10 @@ public class Bonus {
         return setBecameString.toString().trim();
     }
 
-
-
-    public static void/*moet dit "void" zijn of wat anders?*/ feedback(String stringnumber) {
+    public static void feedback(String stringnumber) {
         Scanner scanner = new Scanner(System.in);
         StringBuilder feedback = new StringBuilder();
+
         System.out.println("+ = juiste nummer op de juiste plek, O = juiste nummer verkeerde plek, X = verkeerde nummer");
         System.out.println("Doe een gok, Let op vul 4 getallen in.");
         String guess = scanner.nextLine();
@@ -51,6 +50,6 @@ public class Bonus {
                 }
             }
         }
-        System.out.println(feedback.toString());
+        System.out.println(feedback);
     }
 }
