@@ -11,18 +11,31 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         translator = new Translator(alphabetic,numeric);
 
-        // via scanner input vragen
-        System.out.println("Voer een getal in");
-        Integer numberToTranslate = scanner.nextInt();
-        String translated = translator.translate(numberToTranslate);
-        System.out.println(translated); // This should print "een"
 
+        while(play) {
+            System.out.println("Type 'x' om te stoppen \n Type 'v' om te vertalen");
+            String input = scanner.nextLine();
+
+            if(input.equals("x") ){
+                play = false;
+                System.out.println("Bedankt en tot ziens.");
+            } else if(input.equals("v")) {
+                System.out.println("Type een cijfer in van 0 t/m 9");
+                int numberInput = scanner.nextInt();
+                scanner.nextLine();
+                if (numberInput < 10){
+                    String result = translator.translate(numberInput);
+                    System.out.println("De vertaling van " + numberInput + " is " + result);
+                } else {
+                    System.out.println("ongeldig");
+                }
+            } else {
+                System.out.println("ongeldig");
+            }
+        }
 
 
     }
 
 
 }
-//aak in de main methode van de Main class een boolean variabele genaamd `play` met de waarde `true`. Maak een String variabele genaamd `ongeldig` waarin je de String "ongeldige invoer" zet. Als laatst maak je nog een nieuw Scanner object aan met `Scanner scanner = new Scanner(System.in)`.
-//        13. Vervolgens maak je een while-loop die doorgaat zolang `play` true is.
-//14. Print in de while-loop `"Type 'x' om te stoppen \nType 'v' om te vertalen"` en maak een String variabele genaamd `input` waarin je de waarde van `scanner.nextLine()` opslaat.
