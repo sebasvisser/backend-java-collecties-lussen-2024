@@ -15,5 +15,12 @@ public class Translator {
             numericAlpha.put(numeric[i], alphabetic[i]);
         }
     }
+
+    public String translate(Integer number){
+        String result;
+        result =  numericAlpha.getOrDefault(number, "Getal niet gevonden.");
+
+        return result;
+    }
 }
 
